@@ -5,7 +5,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const pitcherList = (state = ['Someone McSports'], action) => {
+const defaultPitcherList = ['Maud Nelson', 'Ila Borders', 'Don Newcombe', 'CC Sabathia'];
+const pitcherList = (state = defaultPitcherList, action) => {
   if (action.type === 'ADD_PITCHER') {
     return [...state, action.payload];
   }
@@ -13,7 +14,8 @@ const pitcherList = (state = ['Someone McSports'], action) => {
   return state;
 };
 
-const catcherList = (state = ['Baseball McPerson'], action) => {
+const defaultCatcherList = ['Roy Campanella', 'Elston Howard', 'Kenji Jojima'];
+const catcherList = (state = defaultCatcherList, action) => {
   if (action.type === 'ADD_CATCHER') {
     return [...state, action.payload];
   }

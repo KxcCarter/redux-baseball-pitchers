@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+// ---
 import TotalCatchers from '../TotalCatchers/TotalCatchers';
 import TotalPitchers from '../TotalPitchers/TotalPitchers';
-import { connect } from 'react-redux';
+import PitcherForm from '../PitcherForm/PitcherForm';
+import PitcherList from '../PitcherList/PitcherList';
 
 class App extends Component {
   state = {
     currentPitcher: 'Maud Nelson',
     currentCatcher: 'Elston Howard',
-    pitcherList: ['Maud Nelson', 'Ila Borders', 'Don Newcombe', 'CC Sabathia'],
-    catcherList: ['Roy Campanella', 'Elston Howard', 'Kenji Jojima'],
   };
 
   render() {
@@ -17,12 +19,16 @@ class App extends Component {
         <h1>Redux Baseball Pitchers</h1>
         <h2>On the Mound: {this.state.currentPitcher}</h2>
         <h2>Behind the Plate: {this.state.currentCatcher}</h2>
-        <div>Total Pitchers: {this.state.pitcherList.length}</div>
+        <div>Total Pitchers: {this.props.store.pitcherList.length}</div>
         <div>Total Catchers: {this.props.store.catcherList.length}</div>
 
         <br></br>
+        <h3>All Pitchers</h3>
+        <PitcherForm />
+        <PitcherList />
         <TotalCatchers />
-        <TotalPitchers />
+
+        {/* <TotalPitchers /> */}
       </div>
     );
   }
