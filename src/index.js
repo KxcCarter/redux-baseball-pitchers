@@ -22,13 +22,11 @@ const catcherList = (state = ['Baseball McPerson'], action) => {
 };
 
 const storedInstance = createStore(
-  combineReducers(
-    {
-      pitcherList,
-      catcherList,
-    },
-    applyMiddleware(logger)
-  )
+  combineReducers({
+    pitcherList,
+    catcherList,
+  }),
+  applyMiddleware(logger)
 );
 
 ReactDOM.render(

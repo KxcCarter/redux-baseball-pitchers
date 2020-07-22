@@ -41,8 +41,10 @@ class TotalPitchers extends Component {
           <button type="submit">Add Pitcher</button>
         </form>
         <ul>
-          {this.state.pitcherList.map((pitcher) => (
-            <li onClick={this.handlePitcherSelectClick(pitcher)}>{pitcher}</li>
+          {this.state.pitcherList.map((pitcher, index) => (
+            <li key={index} onClick={this.handlePitcherSelectClick(pitcher)}>
+              {pitcher}
+            </li>
           ))}
         </ul>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TotalCatchers from '../TotalCatchers/TotalCatchers';
 import TotalPitchers from '../TotalPitchers/TotalPitchers';
+import { connect } from 'react-redux';
 
 class App extends Component {
   state = {
@@ -17,7 +18,7 @@ class App extends Component {
         <h2>On the Mound: {this.state.currentPitcher}</h2>
         <h2>Behind the Plate: {this.state.currentCatcher}</h2>
         <div>Total Pitchers: {this.state.pitcherList.length}</div>
-        <div>Total Catchers: {this.state.catcherList.length}</div>
+        <div>Total Catchers: {this.props.store.catcherList.length}</div>
 
         <br></br>
         <TotalCatchers />
@@ -27,4 +28,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStoreToProps = (store) => {
+  return {
+    store,
+  };
+};
+
+export default connect(mapStoreToProps)(App);
