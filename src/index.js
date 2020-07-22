@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 
 const pitcherList = (state = ['Someone McSports'], action) => {
   if (action.type === 'ADD_PITCHER') {
-    return [...state, action.payload.newPitcher];
+    return [...state, action.payload];
   }
 
   return state;

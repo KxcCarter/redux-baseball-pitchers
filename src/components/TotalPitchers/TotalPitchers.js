@@ -16,9 +16,9 @@ class TotalPitchers extends Component {
 
   handlePitcherSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      newPitcher: '',
-      pitcherList: [...this.state.pitcherList, this.state.newPitcher],
+    this.props.dispatch({
+      type: 'ADD_PITCHER',
+      payload: this.state.newPitcher,
     });
   };
 
@@ -41,7 +41,7 @@ class TotalPitchers extends Component {
           <button type="submit">Add Pitcher</button>
         </form>
         <ul>
-          {this.state.pitcherList.map((pitcher, index) => (
+          {this.props.pitchers.map((pitcher, index) => (
             <li key={index} onClick={this.handlePitcherSelectClick(pitcher)}>
               {pitcher}
             </li>
@@ -52,6 +52,8 @@ class TotalPitchers extends Component {
   }
 }
 
-// needs access to store
+const mapStoreToProps = (store) => {
+  return { pitchers: store.pitcherList };
+};
 
-export default connect()(TotalPitchers);
+export default connect(mapStoreToProps)(TotalPitchers);
