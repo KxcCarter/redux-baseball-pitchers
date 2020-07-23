@@ -6,10 +6,14 @@ class PitcherList extends Component {
     currentPitcher: 'Maud Nelson',
   };
 
-  handlePitcherSelectClick = (selectedPitcher) => () => {
-    this.setState({
-      currentPitcher: selectedPitcher,
+  handlePitcherSelectClick = (selectedPitcher) => (event) => {
+    this.props.dispatch({
+      type: 'SELECT_PITCHER',
+      payload: selectedPitcher,
     });
+    // this.setState({
+    //   currentPitcher: selectedPitcher,
+    // });
   };
   render() {
     return (

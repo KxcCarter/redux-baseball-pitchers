@@ -30,11 +30,19 @@ const currentCatcher = (state = '', action) => {
   return state;
 };
 
+const currentPitcher = (state = '', action) => {
+  if (action.type === 'SELECT_PITCHER') {
+    return action.payload;
+  }
+  return state;
+};
+
 const storedInstance = createStore(
   combineReducers({
     pitcherList,
     catcherList,
     currentCatcher,
+    currentPitcher,
   }),
   applyMiddleware(logger)
 );
