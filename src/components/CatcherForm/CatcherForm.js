@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class CatcherForm extends Component {
   state = {
-    currentCatcher: 'Elston Howard',
     newCatcher: '',
   };
 
@@ -29,7 +28,6 @@ class CatcherForm extends Component {
   render() {
     return (
       <div>
-        <h3>All Catchers</h3>
         <form onSubmit={this.handleCatcherSubmit}>
           <input
             type="text"

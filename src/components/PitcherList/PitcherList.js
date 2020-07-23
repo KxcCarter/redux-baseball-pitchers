@@ -2,18 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class PitcherList extends Component {
-  state = {
-    currentPitcher: 'Maud Nelson',
-  };
-
   handlePitcherSelectClick = (selectedPitcher) => (event) => {
     this.props.dispatch({
       type: 'SELECT_PITCHER',
       payload: selectedPitcher,
     });
-    // this.setState({
-    //   currentPitcher: selectedPitcher,
-    // });
   };
   render() {
     return (

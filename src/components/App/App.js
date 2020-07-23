@@ -12,11 +12,6 @@ import BehindThePlate from '../BehindThePlate/BehindThePlate';
 import OnTheMound from '../OnTheMound/OnTheMound';
 
 class App extends Component {
-  state = {
-    currentPitcher: 'Maud Nelson',
-    currentCatcher: 'Elston Howard',
-  };
-
   render() {
     return (
       <div>
@@ -25,11 +20,10 @@ class App extends Component {
         <BehindThePlate />
         <TotalPitchers />
         <TotalCatchers />
-
-        <br></br>
         <h3>All Pitchers</h3>
         <PitcherForm />
         <PitcherList />
+        <h3>All Catchers</h3>
         <CatcherForm />
         <CatcherList />
       </div>
