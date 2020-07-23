@@ -4,15 +4,18 @@ import { connect } from 'react-redux';
 class CatcherList extends Component {
   state = {
     currentCatcher: 'Elston Howard',
-    catcherList: ['Roy Campanella', 'Elston Howard', 'Kenji Jojima'],
     newCatcher: '',
   };
 
-  // Does this belong here?
-  handleCatcherSelectClick = (selectedCatcher) => () => {
-    this.setState({
-      currentCatcher: selectedCatcher,
+  handleCatcherSelectClick = (selectedCatcher) => (event) => {
+    this.props.dispatch({
+      type: 'SELECT_CATCHER',
+      payload: selectedCatcher,
     });
+
+    // this.setState({
+    //   currentCatcher: selectedCatcher,
+    // });
   };
   render() {
     return (

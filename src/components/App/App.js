@@ -8,6 +8,7 @@ import PitcherForm from '../PitcherForm/PitcherForm';
 import PitcherList from '../PitcherList/PitcherList';
 import CatcherForm from '../CatcherForm/CatcherForm';
 import CatcherList from '../CatcherList/CatcherList';
+import BehindThePlate from '../BehindThePlate/BehindThePlate';
 
 class App extends Component {
   state = {
@@ -20,7 +21,7 @@ class App extends Component {
       <div>
         <h1>Redux Baseball Pitchers</h1>
         <h2>On the Mound: {this.state.currentPitcher}</h2>
-        <h2>Behind the Plate: {this.state.currentCatcher}</h2>
+        <BehindThePlate />
         <TotalPitchers />
         <TotalCatchers />
 

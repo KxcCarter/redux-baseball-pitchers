@@ -26,12 +26,6 @@ class CatcherForm extends Component {
     });
   };
 
-  // Does this belong here?
-  handleCatcherSelectClick = (selectedCatcher) => () => {
-    this.setState({
-      currentCatcher: selectedCatcher,
-    });
-  };
   render() {
     return (
       <div>
