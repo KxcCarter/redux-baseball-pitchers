@@ -18,6 +18,10 @@ class PitcherForm extends Component {
       type: 'ADD_PITCHER',
       payload: this.state.newPitcher,
     });
+
+    this.setState({
+      newPitcher: '',
+    });
   };
 
   render() {
